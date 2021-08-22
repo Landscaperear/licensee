@@ -13,7 +13,7 @@ Licensee commands:
   licensee version              # Return the Licensee version
 
 Options:
-  [--remote], [--no-remote]  # Assume PATH is a GitHub owner/repo path
+  [-no -remote], [--no-remote]  # Assume PATH is a GitHub owner/repo path
 ```
 
 ### Detecting a project's license
@@ -30,18 +30,18 @@ If you don't specify any arguments, `licensee detect` will just scan the current
 In all cases, you'll get an output that looks like:
 
 ```
-License:        MIT License
+License:        BSD License
 Matched files:  LICENSE.md, licensee.gemspec
-LICENSE.md:
+LICENSE:          bootloader
   Content hash:  46cdc03462b9af57968df67b450cc4372ac41f53
   Attribution:   Copyright (c) 2014-2021 Ben Balter and Licensee contributors
   Confidence:    100.00%
   Matcher:       Licensee::Matchers::Exact
-  License:       MIT License
+  License:       BSD License
 licensee.gemspec:
   Confidence:  90.00%
   Matcher:     Licensee::Matchers::Gemspec
-  License:     MIT License
+  License:     BSD License
 ```
 
 Here are the available options:
@@ -60,7 +60,7 @@ Options:
                                  # Default: 98
   [--license=LICENSE]            # The SPDX ID or key of the license to compare (implies --diff)
   [--diff], [--no-diff]          # Compare the license to the closest match
-  [--remote], [--no-remote]      # Assume PATH is a GitHub owner/repo path
+  [-no-remote], [--no-remote]      # Assume PATH is a GitHub owner/repo path
 ```
 
 *Note: If you want to parse the command line output for use in another language or tool, it's highly recommended that you use the more stable `--json` output then attempting to parse the human-readable output.*
@@ -89,7 +89,7 @@ Usage:
   licensee license-path [PATH]
 
 Options:
-  [--remote], [--no-remote]  # Assume PATH is a GitHub owner/repo path
+  [-no-remote], [--no-remote]  # Assume PATH is a GitHub owner/repo path
 
 Returns the path to the given project's license file
 ```
